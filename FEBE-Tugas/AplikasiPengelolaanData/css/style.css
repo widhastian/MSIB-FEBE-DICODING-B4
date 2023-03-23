@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+html, body {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background-color: #F1C733;
+    justify-content: center;
+}
+
+main {
+    margin: 20px 20px;
+    display: flex;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+.box-shadow {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+}
+
+.card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 1rem;
+}
+
+.btn-submit {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    background-color: #F1C733;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.3);
+    border: none;
+    border-radius: 10px;
+    width: 150px;
+    height: 50px;
+}
+
+.btn-submit:hover {
+    color: #fff;
+    font-weight: 600;
+    background-color: green;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    border-radius: 10px;
+    border-width: 2px;
+    width: 500px;
+    height: 30px;
+    padding: 0.5rem;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    background-color: #fffbee;
+    border-color: #F1C733;
+}
+
+aside {
+    flex: 1;
+    display: flex;
+}
+
+.item {
+    border-radius: 16px;
+    margin-top: 16px;
+    padding: 12px 24px 12px 24px;
+    background: white;
+    display: flex;
+    align-items: center;
+}
+
+.item>.inner h2 {
+    margin-bottom: unset;
+}
+
+.item>.inner p {
+    margin-top: 5px;
+}
+
+.content-card {
+    margin-bottom: 1rem;
+    width: 850px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.6);
+    padding: 1rem;
+    word-wrap: break-word;
+}
+
+.check-button {
+    width: 40px;
+    height: 40px;
+
+    background: url('../assets/checkbox-outline.svg');
+    background-size: contain;
+    margin-left: auto;
+    cursor: pointer;
+    border: none;
+}
+
+.check-button:hover {
+    background: url('../assets/checkbox-fill.svg');
+    background-size: contain;
+}
+
+.trash-button {
+    width: 40px;
+    height: 40px;
+
+    background: url('../assets/trash-outline.svg');
+    background-size: contain;
+    margin-left: 16px;
+    cursor: pointer;
+    border: none;
+}
+
+.trash-button:hover {
+    background: url('../assets/trash-fill.svg');
+    background-size: contain;
+}
+
+.undo-button {
+    width: 40px;
+    height: 40px;
+
+    background: url('../assets/reload.svg');
+    background-size: contain;
+    margin-left: auto;
+    cursor: pointer;
+    border: none;
+}
+
+.undo-button:hover {
+    background: url('../assets/reload.svg');
+    background-size: contain;
+}
+
+.check-button:focus,
+.trash-button {
+    outline: none;
+}
+
+@media only screen and (max-width: 1024px) {
+    .container {
+        width: 100%;
+        margin: 0;
+    }
+
+    .list-item {
+        width: 90%;
+    }
+
+    .form {
+        width: 100%;
+    }
+}

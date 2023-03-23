@@ -37,10 +37,10 @@ document.addEventListener('DOMContentLoaded', function () {
     function addBook() {
     const bookTitle = document.getElementById('title').value;
     const bookAuthor = document.getElementById('author').value;
-    const year = document.getElementById('year').value;
+    const textYear = document.getElementById('year').value;
     
     const generatedID = generateId();
-    const Books = generateTodoObject(generatedID, bookTitle, bookAuthor, year, false);
+    const Books = generateTodoObject(generatedID, bookTitle, bookAuthor, textYear, false);
     unreadBook.push(Books);
     
     document.dispatchEvent(new Event(RENDER_EVENT));
@@ -60,31 +60,34 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     document.addEventListener(RENDER_EVENT, function () {
-        const unfinishBook = document.getElementById('unreadBook');
-        unfinishBook.innerHTML = '';
+        const unfinishBookList = document.getElementById('unreadBook');
+        unfinishBookList.innerHTML = '';
 
-        const finishBook = document.getElementById('finishBook');
-        finishBook.innerHTML = '';
+        const finishBookList = document.getElementById('finishBook');
+        finishBookList.innerHTML = '';
         
         for (const bookItem of unreadBook) {
             const bookElement = addNewBook(bookItem);
             if (!bookItem.isCompleted) 
-                unfinishBook.append(bookElement);
+                unfinishBookList.append(bookElement);
             else 
-                finishBook.append(bookElement);
+                finishBookList.append(bookElement);
         }
     });
 
     function addNewBook(Books) {
         const textbookTitle = document.createElement('h2');
-        textbookTitle.innerText = Books.bookTitle;
+        textbookTitle.innerText = Books.title;
+
+        const textbookAuthor = document.createElement('h3');
+        textbookAuthor.innerText = Books.author;
         
         const textYear = document.createElement('p');
         textYear.innerText = Books.year;
         
         const textContainer = document.createElement('div');
         textContainer.classList.add('inner');
-        textContainer.append(textbookTitle, textYear);
+        textContainer.append(textbookTitle, textbookAuthor, textYear);
         
         const container = document.createElement('div');
         container.classList.add('item', 'shadow');
