@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #edf2fb;
+}
+
+header .container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #5465ff;
+}
+
+main .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    text-align: center;
+    color: #fff;
+}
+
+form {
+    margin: 20px 0;
+    text-align: center;
+}
+
+form label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+form input {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #5465ff;
+    margin-right: 10px;
+}
+
+form button {
+    background-color: #5465ff;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#daftar-film {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.daftar-film-item {
+    width: 200px;
+    margin: 10px;
+    box-shadow: 0px 0px 5px #bfd7ff;
+    overflow: hidden;
+}
+
+.daftar-film-item img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.daftar-film-item h3 {
+    margin: 10px;
+}
+
+.daftar-film-item p {
+    margin: 0 10px 10px;
+}
+
+.daftar-film-item button {
+    background-color: #5465ff;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.daftar-film-item img:hover {
+    transform: scale(1.1);
+}
+
+.daftar-film-item button:hover {
+    background-color: #5465ff;
+}
