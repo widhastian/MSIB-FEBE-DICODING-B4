@@ -2,7 +2,7 @@ import UrlParser from '../../routes/url-parser';
 import RestaurantSource from '../../data/restaurants-source';
 import { createRestoDetailTemplate } from '../templates/template-creator';
 import LikeButtonInitiator from '../../utils/like-button-initiator';
-import FavoriteRestoIdb from '../../data/favorite-resto-idb';
+// import FavoriteRestoIdb from '../../data/favorite-resto-idb';
 
 const Detail = {
   async render() {
@@ -16,7 +16,6 @@ const Detail = {
     const url = UrlParser.parseActiveUrlWithoutCombiner();
     const restaurant = await RestaurantSource.detailRestaurants(url.id);
     const restaurantContainer = document.querySelector('#restaurant');
-
     restaurantContainer.innerHTML = createRestoDetailTemplate(restaurant);
 
     const jumbotron = document.querySelector('.hero');
@@ -24,14 +23,14 @@ const Detail = {
 
     LikeButtonInitiator.init({
       likeButtonContainer: document.querySelector('#likeButtonContainer'),
-      favoriteRestaurants: FavoriteRestoIdb,
+      // FavoriteRestaurants: FavoriteRestoIdb,
       restaurant: {
-        id: restaurant.restaurant.id,
-        name: restaurant.restaurant.name,
-        city: restaurant.restaurant.city,
-        description: restaurant.restaurant.description,
-        pictureId: restaurant.restaurant.pictureId,
-        rating: restaurant.restaurant.rating,
+        id: restaurant.id,
+        name: restaurant.name,
+        city: restaurant.city,
+        description: restaurant.description,
+        pictureId: restaurant.pictureId,
+        rating: restaurant.rating,
       },
     });
   },

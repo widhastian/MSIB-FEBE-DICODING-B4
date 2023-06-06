@@ -1,39 +1,39 @@
 import CONFIG from '../../globals/config';
 
 const createRestoDetailTemplate = (restaurant) => `
-  <h1 class="resto__name">${restaurant.restaurant.name}</h1>
-  <img class="resto__picture" src="${CONFIG.BASE_IMAGE_URL + restaurant.restaurant.pictureId}" alt="${restaurant.restaurant.name}" />
+  <h1 class="resto__name">${restaurant.name}</h1>
+  <img class="resto__picture" src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}" alt="${restaurant.name}" />
   <div class="resto__info">
     <h3>Information</h3>
     <h4>City</h4>
-    <p>${restaurant.restaurant.city}</p>
+    <p>${restaurant.city}</p>
     <h4>Address</h4>
-    <p>${restaurant.restaurant.address}</p>
+    <p>${restaurant.address}</p>
     <h4>Rating</h4>
-    <p>${restaurant.restaurant.rating}</p>
+    <p>${restaurant.rating}</p>
   </div>
   <div class="resto__description">
     <h3>Descrirption</h3>
-    <p>${restaurant.restaurant.description}</p>
+    <p>${restaurant.description}</p>
   </div>
   <div class="resto__menus">
     <div class="foods">
       <h3>Foods</h3>
       <ul>
-        ${restaurant.restaurant.menus.foods.map((food) => `<li>${food.name}</li>`).join('')}
+        ${restaurant.menus.foods.map((food) => `<li>${food.name}</li>`).join('')}
       </ul>
     </div>
     <div class="drinks">
       <h3>Drinks</h3>
       <ul>
-        ${restaurant.restaurant.menus.drinks.map((drink) => `<li>${drink.name}</li>`).join('')}
+        ${restaurant.menus.drinks.map((drink) => `<li>${drink.name}</li>`).join('')}
       </ul>
     </div>
   </div>
   <div class="resto__reviews">
     <h3>Customer Reviews</h3>
     <div class="customer__review">
-      ${restaurant.restaurant.customerReviews.map((review) => `
+      ${restaurant.customerReviews.map((review) => `
         <div class="card">
           <p class="card__name">${review.name}</p>
           <p class="card__date">${review.date}</p>
@@ -44,18 +44,18 @@ const createRestoDetailTemplate = (restaurant) => `
   </div>
 `;
  
-const createRestoItemTemplate = (restaurant) => `
+const createRestoItemTemplate = (restaurants) => `
   <div class="resto-item">
     <div class="resto-item__header">
-      <img class="resto-item__header__poster" alt="${restaurant.name}"
-           src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}">
+      <img class="resto-item__header__poster" alt="${restaurants.name}"
+           src="${CONFIG.BASE_IMAGE_URL + restaurants.pictureId}">
       <div class="resto-item__header__rating">
-        <p>⭐️<span class="resto-item__header__rating__score">${restaurant.rating}</span></p>
+        <p>⭐️<span class="resto-item__header__rating__score">${restaurants.rating}</span></p>
       </div>
     </div>
     <div class="resto-item__content">
-      <h3><a href="/#/detail/${restaurant.id}">${restaurant.name}</a></h3>
-      <p>${restaurant.description}</p>
+      <h3><a href="/#/detail/${restaurants.id}">${restaurants.name}</a></h3>
+      <p>${restaurants.description}</p>
     </div>
   </div>
 `;
