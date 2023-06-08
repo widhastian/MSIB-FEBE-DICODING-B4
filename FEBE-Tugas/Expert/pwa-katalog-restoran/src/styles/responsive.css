@@ -76,3 +76,9 @@
         grid-template-columns: repeat(5, 1fr);
     }
 }
+
+@media screen and (min-width: 1024px) {
+    .hero {
+        background-image: url('../public/images/hero-image_2.jpg');
+    }
+}

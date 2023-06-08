@@ -2,7 +2,7 @@ import UrlParser from '../../routes/url-parser';
 import RestaurantSource from '../../data/restaurants-source';
 import { createRestoDetailTemplate } from '../templates/template-creator';
 import LikeButtonInitiator from '../../utils/like-button-initiator';
-// import FavoriteRestoIdb from '../../data/favorite-resto-idb';
+import FavoriteRestoIdb from '../../data/favorite-resto-idb';
 
 const Detail = {
   async render() {
@@ -23,7 +23,7 @@ const Detail = {
 
     LikeButtonInitiator.init({
       likeButtonContainer: document.querySelector('#likeButtonContainer'),
-      // FavoriteRestaurants: FavoriteRestoIdb,
+      favoriteRestaurants: FavoriteRestoIdb,
       restaurant: {
         id: restaurant.id,
         name: restaurant.name,

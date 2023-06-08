@@ -1,0 +1,15 @@
+{
+  "name": "bookshelfapi",
+  "version": "1.0.0",
+  "description": "Submission Backend Pemula",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/server.js"
+  },
+  "author": "Widha Astianna (f004yb085@dicoding.org)",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "nanoid": "^3.3.6"
+  }
+}
